@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Firas Kouki, E-commerce Specialist: Shopify and eBay store operations, catalogue management, orders and returns.">
+<title>Firas Kouki Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+/* Layout: the portfolio as a parcel moving through a warehouse — a shipping label hero, a packing slip, two "pallets" (case studies) with mock listings, and a dispatch footer. */
+:root {
+  --bg: #E7E8E3;          /* concrete floor */
+  --paper: #FFFFFF;       /* label stock */
+  --ink: #111418;
+  --muted: #5B6168;
+  --line: #C9CCC5;
+  --navy: #14244A;        /* stat band */
+  --navy-fg: #F2F4F8;
+  --orange: #FF5B1F;      /* safety orange: actions, stamps */
+  --tape: #FFD23F;        /* tape yellow: highlights */
+  --green: #1E7A4C;
+  --tint: #F4F4F0;
+  --display: "Big Shoulders Display", Impact, "Arial Narrow", sans-serif;
+  --body: "Instrument Sans", "Segoe UI", Arial, sans-serif;
+  --mono: "JetBrains Mono", Consolas, "Courier New", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15171A; --paper: #1F2226; --ink: #ECEEEA; --muted: #A2A8AE; --line: #363A40;
+    --navy: #0E1A36; --navy-fg: #F2F4F8; --orange: #FF6E37; --tape: #FFD23F; --green: #4CC38A; --tint: #262A2F;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15171A; --paper: #1F2226; --ink: #ECEEEA; --muted: #A2A8AE; --line: #363A40;
+  --navy: #0E1A36; --navy-fg: #F2F4F8; --orange: #FF6E37; --tape: #FFD23F; --green: #4CC38A; --tint: #262A2F;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font: 400 16px/1.6 var(--body);
+  -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(color-mix(in srgb, var(--ink) 7%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.band-inner {
+  max-width: 1080px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+h2 { font: 900 clamp(2.4rem, 6vw, 4rem)/0.92 var(--display); text-transform: uppercase; letter-spacing: 0.005em; }
+h3 { font: 700 1.15rem/1.3 var(--body); }
+p { margin: 0; max-width: 64ch; }
+a { color: inherit; text-decoration-color: var(--orange); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+.mono { font-family: var(--mono); }
+.kicker { font: 700 0.74rem/1.3 var(--mono); text-transform: uppercase; letter-spacing: 0.12em; color: var(--orange); }
+.hl { background: linear-gradient(transparent 58%, var(--tape) 58%); color: inherit; padding: 0 2px; }
+
+section.band { padding-block: 72px; }
+.sec-head { display: grid; gap: 14px; margin-bottom: 36px; }
+.sec-head p { color: var(--muted); font-size: 1.05rem; }
+
+/* ---------- HERO: shipping label ---------- */
+.hero { padding-block: 48px 64px; }
+.label {
+  position: relative; background: var(--paper); border: 3px solid var(--ink);
+  display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  box-shadow: 10px 10px 0 var(--ink);
+}
+.label > * { min-width: 0; }
+.l-main { padding: 28px 30px 26px; border-right: 3px solid var(--ink); display: grid; gap: 18px; align-content: start; }
+.l-top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font: 700 0.78rem/1.3 var(--mono); text-transform: uppercase; letter-spacing: 0.1em; }
+.l-top .pri { background: var(--ink); color: var(--paper); padding: 3px 8px; }
+.name { font: 900 clamp(4rem, 13vw, 8.6rem)/0.82 var(--display); text-transform: uppercase; letter-spacing: -0.01em; }
+.name span { color: var(--orange); }
+.title { font: 600 clamp(1.1rem, 2.4vw, 1.4rem)/1.35 var(--body); max-width: 30ch; }
+.intro { color: var(--muted); }
+.contact { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px; border: 2px solid var(--ink); padding: 6px 10px;
+  font: 500 0.86rem/1.2 var(--mono); background: var(--paper); color: var(--ink); text-decoration: none; cursor: pointer;
+}
+.chip b { font-weight: 700; color: var(--orange); font-size: 0.7rem; letter-spacing: 0.1em; }
+.chip:hover { background: var(--tape); color: #111418; }
+.chip:hover b { color: #111418; }
+
+.l-side { display: grid; grid-template-rows: auto auto 1fr auto; }
+.field { padding: 14px 20px; border-bottom: 3px solid var(--ink); display: grid; gap: 2px; }
+.field small { font: 700 0.68rem/1.3 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.field strong { font: 800 1.5rem/1.05 var(--display); text-transform: uppercase; letter-spacing: 0.01em; }
+.field span { font-size: 0.92rem; }
+.contents { padding: 18px 20px; display: grid; grid-template-rows: auto 1fr; gap: 10px; border-bottom: 3px solid var(--ink); }
+.contents ul { margin: 0; padding: 0; list-style: none; display: grid; align-content: space-evenly; font: 500 0.95rem/1.4 var(--mono); }
+.contents li { padding-block: 12px; border-bottom: 1px dashed var(--line); }
+.contents li:last-child { border-bottom: 0; }
+.contents li::before { content: "■ "; color: var(--orange); }
+.barcode { padding: 14px 20px 12px; display: grid; gap: 6px; }
+.bars {
+  height: 64px;
+  background: repeating-linear-gradient(90deg,
+    var(--ink) 0 3px, transparent 3px 5px, var(--ink) 5px 6px, transparent 6px 9px,
+    var(--ink) 9px 13px, transparent 13px 14px, var(--ink) 14px 15px, transparent 15px 19px,
+    var(--ink) 19px 21px, transparent 21px 23px, var(--ink) 23px 27px, transparent 27px 28px,
+    var(--ink) 28px 29px, transparent 29px 33px);
+}
+.barcode code { font: 500 0.8rem/1 var(--mono); letter-spacing: 0.32em; text-align: center; }
+
+.stamp {
+  position: absolute; right: 26px; bottom: 34px;
+  border: 4px solid var(--orange); color: var(--orange); padding: 6px 12px;
+  font: 900 1.25rem/1 var(--display); text-transform: uppercase; letter-spacing: 0.06em; text-align: center;
+  transform: rotate(-9deg); background: color-mix(in srgb, var(--paper) 85%, transparent);
+  animation: stamp 0.55s cubic-bezier(.2,1.6,.4,1) 0.25s both;
+}
+.stamp small { display: block; font: 700 0.6rem/1.4 var(--mono); letter-spacing: 0.14em; }
+@keyframes stamp { from { transform: rotate(-9deg) scale(1.6); } to { transform: rotate(-9deg) scale(1); } }
+.tape-strip {
+  position: absolute; left: 50%; top: -16px; width: 140px; height: 30px; transform: translateX(-50%) rotate(-2deg);
+  background: color-mix(in srgb, var(--tape) 80%, transparent);
+}
+
+/* ---------- STAT BAND ---------- */
+.stats { background: var(--navy); color: var(--navy-fg); padding-block: 40px; }
+.stat-row { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; }
+.stat { padding: 6px 20px; border-left: 1px solid color-mix(in srgb, var(--navy-fg) 22%, transparent); display: grid; gap: 6px; align-content: start; }
+.stat:first-child { border-left: 0; padding-left: 0; }
+.stat b { font: 900 clamp(2.4rem, 5vw, 3.6rem)/0.9 var(--display); color: var(--tape); font-variant-numeric: tabular-nums; }
+.stat span { font-size: 0.9rem; line-height: 1.4; color: color-mix(in srgb, var(--navy-fg) 82%, transparent); }
+
+/* ---------- PACKING SLIP ---------- */
+.slip { background: var(--paper); border: 2px solid var(--ink); position: relative; }
+.slip::before {
+  content: ""; position: absolute; left: 0; right: 0; top: -10px; height: 10px;
+  background: radial-gradient(circle at 10px 10px, transparent 6px, var(--ink) 6.5px, var(--ink) 8px, transparent 8.5px) 0 0 / 20px 20px repeat-x;
+  opacity: .35;
+}
+.slip-head { display: grid; grid-template-columns: 56px minmax(0, 0.9fr) minmax(0, 1.4fr); border-bottom: 2px solid var(--ink); font: 700 0.72rem/1.3 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; }
+.slip-head div { padding: 10px 14px; }
+.slip-row { display: grid; grid-template-columns: 56px minmax(0, 0.9fr) minmax(0, 1.4fr); border-bottom: 1px dashed var(--line); }
+.slip-row:last-child { border-bottom: 0; }
+.slip-row > div { padding: 14px; min-width: 0; }
+.check {
+  width: 26px; height: 26px; border: 2px solid var(--ink); display: grid; place-items: center;
+  font: 700 1rem/1 var(--body); color: var(--green); margin-top: 2px;
+}
+.slip-row .ask { font-weight: 600; }
+.slip-row .did { color: var(--muted); font-size: 0.95rem; }
+.slip-row .did em { font-style: normal; font-family: var(--mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; padding: 1px 6px; margin-right: 6px; border: 1.5px solid currentColor; }
+.tag-web { color: var(--orange); }
+.tag-ebay { color: var(--green); }
+
+/* ---------- CASE STUDY ---------- */
+.case-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 40px; align-items: center; margin-bottom: 56px; }
+.case-top > div { min-width: 0; display: grid; gap: 18px; }
+.pallet-no { font: 900 1rem/1 var(--mono); letter-spacing: 0.14em; display: inline-flex; gap: 10px; align-items: center; }
+.pallet-no span { background: var(--ink); color: var(--paper); padding: 4px 8px; }
+.meta { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 6px 18px; margin: 0; font-size: 0.95rem; }
+.meta dt { font: 700 0.7rem/1.9 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.meta dd { margin: 0; }
+.visit { justify-self: start; display: inline-flex; gap: 10px; align-items: center; background: var(--orange); color: #fff; font: 700 0.95rem/1 var(--body); padding: 12px 18px; text-decoration: none; border: 2px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); }
+.visit:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--ink); }
+
+/* browser mock */
+.browser { background: var(--paper); border: 2px solid var(--ink); box-shadow: 10px 10px 0 var(--ink); }
+.b-bar { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-bottom: 2px solid var(--ink); background: var(--tint); }
+.b-bar i { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--ink); }
+.b-bar code { margin-left: 8px; flex: 1; min-width: 0; font: 500 0.78rem/1 var(--mono); background: var(--paper); border: 1.5px solid var(--line); padding: 5px 9px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.b-body { padding: 18px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.lot { border: 1.5px solid var(--line); background: var(--paper); display: grid; }
+.lot-img { aspect-ratio: 4 / 3; max-width: 100%; position: relative; background:
+  repeating-linear-gradient(135deg, color-mix(in srgb, var(--ink) 6%, transparent) 0 8px, transparent 8px 16px), var(--tint); display: grid; place-items: center; }
+.lot-img svg { width: 46%; height: auto; }
+.badge { position: absolute; font: 800 0.72rem/1 var(--body); padding: 4px 7px; }
+.badge.save { top: 8px; left: 8px; background: var(--tape); color: #111418; }
+.badge.new { top: 8px; right: 8px; background: var(--green); color: #fff; }
+.lot-txt { padding: 10px 11px 12px; display: grid; gap: 4px; }
+.lot-txt strong { font-size: 0.86rem; line-height: 1.3; }
+.lot-txt .row { display: flex; justify-content: space-between; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.price { font: 900 1.4rem/1 var(--display); }
+.avail { font: 600 0.72rem/1.2 var(--mono); color: var(--green); }
+.city { font-size: 0.74rem; color: var(--muted); }
+.b-note { grid-column: 1 / -1; font: 500 0.72rem/1.4 var(--mono); color: var(--muted); }
+
+.shot { margin: 0; }
+.shot img { display: block; width: 100%; height: auto; max-width: 100%; }
+.shot figcaption { padding: 10px 14px; border-top: 2px solid var(--ink); font: 500 0.74rem/1.45 var(--mono); color: var(--muted); }
+
+/* flow */
+.flow-wrap { overflow-x: auto; margin-bottom: 56px; }
+.flow { display: grid; grid-template-columns: repeat(5, minmax(150px, 1fr)); gap: 0; min-width: 760px; }
+.step { position: relative; padding: 18px 16px 18px; border: 2px solid var(--ink); background: var(--paper); display: grid; gap: 6px; align-content: start; }
+.step + .step { border-left: 0; }
+.step::after {
+  content: ""; position: absolute; right: -13px; top: 50%; width: 22px; height: 22px; transform: translateY(-50%) rotate(45deg);
+  background: var(--paper); border-top: 2px solid var(--ink); border-right: 2px solid var(--ink); z-index: 1;
+}
+.step:last-child::after { display: none; }
+.step b { font: 900 2rem/1 var(--display); color: var(--orange); }
+.step strong { font-size: 0.98rem; }
+.step span { font-size: 0.86rem; color: var(--muted); line-height: 1.45; }
+.step.live { background: var(--tape); color: #111418; }
+.step.live span { color: #3a3a30; }
+.step.live b { color: #111418; }
+.step.live::after { display: none; }
+
+/* feature grid */
+.features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.feat { position: relative; background: var(--paper); border: 2px solid var(--ink); padding: 26px 22px 22px; display: grid; gap: 10px; align-content: start; }
+.feat::before { content: ""; position: absolute; top: -12px; left: 22px; width: 72px; height: 22px; background: color-mix(in srgb, var(--tape) 80%, transparent); transform: rotate(-3deg); }
+.feat:nth-child(even)::before { transform: rotate(2deg); left: auto; right: 22px; }
+.feat .kicker { color: var(--muted); }
+.feat ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; font-size: 0.94rem; color: var(--muted); }
+.feat li::marker { color: var(--orange); }
+.feat.wide { grid-column: span 2; }
+
+/* search demo */
+.search-demo { display: grid; gap: 14px; }
+.sd-input { display: flex; align-items: center; gap: 10px; border: 2px solid var(--ink); padding: 9px 12px; font: 500 1rem/1 var(--mono); background: var(--tint); }
+.sd-input .cursor { width: 2px; height: 1.1em; background: var(--orange); animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.sd-toggle { display: flex; border: 2px solid var(--ink); justify-self: start; flex-wrap: wrap; }
+.sd-toggle button { font: 600 0.82rem/1 var(--body); padding: 9px 12px; border: 0; background: var(--paper); color: var(--ink); cursor: pointer; }
+.sd-toggle button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.sd-results { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; counter-reset: r; }
+.sd-results li { counter-increment: r; display: flex; gap: 10px; align-items: center; padding: 8px 10px; border: 1.5px solid var(--line); font-size: 0.92rem; }
+.sd-results li::before { content: counter(r); font: 700 0.8rem/1 var(--mono); color: var(--muted); width: 1.2em; }
+.sd-results li.good { border-color: var(--green); }
+.sd-results li.bad { border-color: var(--orange); background: color-mix(in srgb, var(--orange) 10%, transparent); }
+.sd-results li small { margin-left: auto; font: 700 0.7rem/1 var(--mono); letter-spacing: 0.06em; }
+.sd-results li.good small { color: var(--green); }
+.sd-results li.bad small { color: var(--orange); }
+.sd-cap { font-size: 0.86rem; color: var(--muted); }
+
+/* ---------- EBAY ---------- */
+.ebay { background: var(--paper); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+.ebay-grid { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: 48px; align-items: start; }
+.ebay-grid > div { min-width: 0; display: grid; gap: 18px; }
+.scorecard { border: 3px solid var(--ink); background: var(--bg); padding: 26px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 24px; align-items: center; box-shadow: 10px 10px 0 var(--green); }
+.ring { width: 150px; height: 150px; }
+.ring circle { fill: none; stroke-width: 14; }
+.ring .track { stroke: var(--line); }
+.ring .val { stroke: var(--green); stroke-linecap: butt; transform: rotate(-90deg); transform-origin: 60px 60px; }
+.ring text { fill: var(--ink); font-family: var(--display); font-weight: 900; }
+.ring .sub { font-family: var(--mono); font-weight: 500; fill: var(--muted); }
+.score-list { display: grid; gap: 12px; }
+.score-list div { display: grid; gap: 2px; border-bottom: 1px dashed var(--line); padding-bottom: 10px; }
+.score-list div:last-child { border-bottom: 0; padding-bottom: 0; }
+.score-list b { font: 900 2.2rem/0.95 var(--display); font-variant-numeric: tabular-nums; }
+.score-list span { font-size: 0.86rem; color: var(--muted); }
+.ebay-cols { display: grid; gap: 14px; }
+.ebay-cols article { border-left: 4px solid var(--green); padding: 4px 0 4px 16px; display: grid; gap: 6px; }
+.ebay-cols p { color: var(--muted); font-size: 0.95rem; }
+.ebay .visit { background: var(--green); }
+
+/* ---------- WORKING / TOOLS ---------- */
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; margin-bottom: 56px; }
+.quote { background: var(--paper); border: 2px solid var(--ink); padding: 24px; display: grid; gap: 10px; }
+.quote p { color: var(--muted); }
+.stickers { display: flex; flex-wrap: wrap; gap: 10px; }
+.sticker { border: 2px solid var(--ink); background: var(--paper); padding: 7px 12px; font: 600 0.9rem/1.2 var(--body); }
+.sticker:nth-child(3n+1) { transform: rotate(-1.5deg); }
+.sticker:nth-child(4n+2) { transform: rotate(1.2deg); background: var(--tape); color: #111418; }
+.sticker:nth-child(5n+3) { transform: rotate(-0.8deg); }
+.tool-group { display: grid; gap: 12px; margin-bottom: 22px; }
+
+/* ---------- FOOTER ---------- */
+.dispatch { background: var(--orange); color: #111418; padding-block: 64px; border-top: 3px solid var(--ink); }
+.dispatch h2 { font-size: clamp(3rem, 10vw, 6.4rem); }
+.dispatch-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px; align-items: end; }
+.dispatch-grid > div { min-width: 0; display: grid; gap: 16px; }
+.dispatch p { color: #2a1308; }
+.dispatch .chip { background: #FFF6EF; color: #111418; border-color: #111418; font-size: 0.95rem; padding: 10px 14px; justify-content: space-between; }
+.dispatch .chip b { color: #B33A0E; }
+.dispatch .chip:hover { background: var(--tape); }
+.dispatch .contact { flex-direction: column; }
+.fine { font: 500 0.75rem/1.5 var(--mono); }
+.toast { font: 600 0.8rem/1 var(--mono); min-height: 1em; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .label { grid-template-columns: minmax(0, 1fr); }
+  .l-main { border-right: 0; border-bottom: 3px solid var(--ink); }
+  .stat-row { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 24px; }
+  .stat:nth-child(4) { border-left: 0; padding-left: 0; }
+  .case-top, .ebay-grid, .dispatch-grid, .two { grid-template-columns: 1fr; }
+  .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .feat.wide { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  section.band { padding-block: 52px; }
+  .hero { padding-block: 28px 44px; }
+  .label { box-shadow: 6px 6px 0 var(--ink); }
+  .l-main { padding: 22px 18px; }
+  .stamp { position: static; justify-self: start; margin-top: -4px; }
+  .stat-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat, .stat:nth-child(4) { border-left: 1px solid color-mix(in srgb, var(--navy-fg) 22%, transparent); padding-left: 16px; }
+  .stat:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .slip-head { display: none; }
+  .slip-row { grid-template-columns: 44px minmax(0, 1fr); }
+  .slip-row .did { grid-column: 2; padding-top: 0; }
+  .slip-row .ask { padding-bottom: 6px; }
+  .features { grid-template-columns: 1fr; }
+  .b-body { grid-template-columns: 1fr; }
+  .lot:nth-child(2) { display: none; }
+  .scorecard { grid-template-columns: 1fr; justify-items: start; box-shadow: 6px 6px 0 var(--green); }
+  .browser { box-shadow: 6px 6px 0 var(--ink); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stamp, .sd-input .cursor { animation: none; }
+}
+
+/* ---------- PRINT (PDF) ---------- */
+@media print {
+  :root, :root[data-theme="dark"], :root:not([data-theme="light"]) {
+    --bg: #F1F2EE; --paper: #FFFFFF; --ink: #111418; --muted: #4E545B; --line: #C9CCC5;
+    --navy: #14244A; --orange: #FF5B1F; --tape: #FFD23F; --green: #1E7A4C; --tint: #F4F4F0; color-scheme: light;
+  }
+  @page { size: Letter; margin: 10mm; }
+  body { font-size: 10pt; background-image: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .stamp, .sd-input .cursor { animation: none; }
+  section.band { padding-block: 28px; }
+  .hero { padding-block: 14px 24px; }
+  .sec-head { margin-bottom: 18px; }
+  .label, .slip-row, .feat, .step, .scorecard, .quote, .browser, .ebay-cols article, .case-top { break-inside: avoid; }
+  .sec-head { break-after: avoid; }
+  .flow { min-width: 0; }
+  .case-top { margin-bottom: 28px; }
+  .flow-wrap { margin-bottom: 28px; }
+  .sd-toggle { display: none; }
+  .dispatch { padding-block: 32px; break-inside: avoid; }
+}
+</style>
+</head>
+<body style="margin:0">
+
+<!-- HERO -->
+<header class="hero">
+  <div class="band-inner">
+    <div class="label">
+      <div class="tape-strip" aria-hidden="true"></div>
+      <div class="l-main">
+        <div class="l-top"><span class="pri">Priority · E-commerce</span><span>Portfolio 2026</span></div>
+        <h1 class="name">Firas<br><span>Kouki</span></h1>
+        <p class="title">E-commerce Specialist who builds and runs <span class="hl">Shopify</span> and <span class="hl">eBay</span> storefronts for a Canadian liquidation retailer.</p>
+        <p class="intro">I turn messy weekly supplier manifests into clean, accurate listings, keep two sales channels in sync, ship the orders, and handle returns and feedback.</p>
+        <div class="contact">
+          <button class="chip copy" type="button" data-copy="514-207-7591"><b>TEL</b> 514-207-7591</button>
+          <button class="chip copy" type="button" data-copy="Kfiras.pro@gmail.com"><b>EMAIL</b> Kfiras.pro@gmail.com</button>
+          <a class="chip" href="https://www.linkedin.com/in/firas-kouki-6a4118257/" target="_blank" rel="noopener"><b>IN</b> LinkedIn ↗</a>
+        </div>
+        <span class="toast mono" aria-live="polite"></span>
+      </div>
+      <div class="l-side">
+        <div class="field"><small>Specialty</small><strong>E-commerce operations</strong><span>Listings · pricing · orders · returns</span></div>
+        <div class="field"><small>Platforms</small><strong>Shopify · eBay</strong><span>Google Merchant Center · Excel</span></div>
+        <div class="contents">
+          <small class="mono" style="font-size:.68rem;font-weight:700;letter-spacing:.12em;color:var(--muted)">CONTENTS</small>
+          <ul>
+            <li>1 × Shopify store, built &amp; run</li>
+            <li>1 × eBay store, run end to end</li>
+            <li>98.9% positive feedback</li>
+            <li>Weekly catalogue uploads</li>
+          </ul>
+        </div>
+        <div class="barcode" aria-hidden="true">
+          <div class="bars"></div>
+          <code>FK-ECOM-0559-373</code>
+        </div>
+      </div>
+      <div class="stamp" aria-hidden="true">Inspected<small>Shopify + eBay</small></div>
+    </div>
+  </div>
+</header>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="band-inner">
+    <div class="stat-row">
+      <div class="stat"><b>98.9%</b><span>positive eBay feedback, 373 ratings</span></div>
+      <div class="stat"><b>559</b><span>items sold on eBay</span></div>
+      <div class="stat"><b>169</b><span>eBay store followers</span></div>
+      <div class="stat"><b>4</b><span>sales channels on the website</span></div>
+      <div class="stat"><b>3</b><span>languages: English, French, Arabic</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- PACKING SLIP -->
+<section class="band">
+  <div class="band-inner">
+    <div class="sec-head">
+      <span class="kicker">Packing slip · what e-commerce roles ask for</span>
+      <h2>Everything on the checklist, in the box</h2>
+      <p>The core duties of an e-commerce role, matched to where I already do them. <span class="tag-web mono" style="font-weight:700">WEB</span> is the Shopify website and <span class="tag-ebay mono" style="font-weight:700">EBAY</span> is the eBay store.</p>
+    </div>
+    <div class="slip">
+      <div class="slip-head"><div>✓</div><div>The role calls for</div><div>Where I do it today</div></div>
+      <div class="slip-row"><div><span class="check">✓</span></div><div class="ask">Maintain listings, collections, prices, descriptions and images</div><div class="did"><em class="tag-web">WEB</em>Publish supplier manifests across four channels, checking titles, prices, conditions and photos. <em class="tag-ebay">EBAY</em>Write titles, item specifics, condition notes and photos for every listing.</div></div>
+      <div class="slip-row"><div><span class="check">✓</span></div><div class="ask">Coordinate launches, promotions and storefront updates</div><div class="did"><em class="tag-web">WEB</em>Ran the storefront redesign and the French/Arabic launch with owner sign-off; new stock goes live together via "Publish all". <em class="tag-ebay">EBAY</em>Set up offers, markdown sales and promoted listings.</div></div>
+      <div class="slip-row"><div><span class="check">✓</span></div><div class="ask">Monitor orders and inventory; resolve fulfilment and returns</div><div class="did"><em class="tag-web">WEB</em>Shopify orders flow into the admin; I keep the inventory report and pickup hours for all 10 locations. <em class="tag-ebay">EBAY</em>Pack, ship, add tracking, answer buyers, and handle returns and cases.</div></div>
+      <div class="slip-row"><div><span class="check">✓</span></div><div class="ask">Track traffic, conversion, sales and product performance</div><div class="did"><em class="tag-web">WEB</em>Analytics and error monitoring are set up, and a daily feed keeps Google Shopping prices and stock current. <em class="tag-ebay">EBAY</em>Watch sell-through and feedback to decide what to mark down.</div></div>
+      <div class="slip-row"><div><span class="check">✓</span></div><div class="ask">Improve product pages, on-site search and merchandising</div><div class="did"><em class="tag-web">WEB</em>Built typo-tolerant search, savings badges vs MSRP, "New" badges, and grouped lots that show "10 available".</div></div>
+      <div class="slip-row"><div><span class="check">✓</span></div><div class="ask">Test checkout and promotional changes before they go live</div><div class="did"><em class="tag-web">WEB</em>An automated browser test walks from a listing to Shopify checkout before changes ship.</div></div>
+      <div class="slip-row"><div><span class="check">✓</span></div><div class="ask">Spreadsheets, product data and reporting tools</div><div class="did"><em class="tag-web">WEB</em>Manifests are Excel sheets (ASIN, UPC, units, retail); uploads are checked against the sheet's TOTALS row before anything publishes.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE 1 -->
+<section class="band" style="padding-top:24px">
+  <div class="band-inner">
+    <div class="case-top">
+      <div>
+        <span class="pallet-no"><span>PALLET 01</span> Shopify website</span>
+        <h2>My Canadian Stock</h2>
+        <p>A Canadian liquidation retailer selling Amazon returns and overstock by the pallet, truckload, lot and unit, with bin stores across Québec and a location in the Toronto area. I built its online store and run it every day.</p>
+        <dl class="meta">
+          <dt>My role</dt><dd>Contract builder for the owner, and day-to-day store operator</dd>
+          <dt>Platform</dt><dd>Shopify for products, checkout, orders and customers, behind a custom storefront</dd>
+          <dt>Since</dt><dd>July 2026</dd>
+        </dl>
+        <a class="visit" href="https://mycanadianstock.ca" target="_blank" rel="noopener">Visit mycanadianstock.ca ↗</a>
+      </div>
+      <figure class="browser shot">
+        <div class="b-bar"><i></i><i></i><i></i><code>mycanadianstock.ca</code></div>
+        <a href="https://mycanadianstock.ca" target="_blank" rel="noopener"><img src="mcs-home.png" width="1607" height="901" alt="The My Canadian Stock homepage: lot search, channel navigation, the headline 'Pallets &amp; truckloads of customer returns. Fixed price. No bidding.', and a Just landed panel of new lots with −65% savings badges."></a>
+        <figcaption>The live homepage, November 2026: channel navigation, lot search, and a "Just landed" panel with savings badges.</figcaption>
+      </figure>
+    </div>
+
+    <div class="sec-head" style="margin-bottom:20px">
+      <span class="kicker">The weekly catalogue run</span>
+      <h3 style="font-size:1.4rem">From supplier spreadsheet to Google Shopping</h3>
+    </div>
+    <div class="flow-wrap">
+      <div class="flow">
+        <div class="step"><b>1</b><strong>Manifest arrives</strong><span>Excel sheet: ASIN, UPC, units, retail value, plus a TOTALS row</span></div>
+        <div class="step"><b>2</b><strong>Upload &amp; preview</strong><span>Item count and totals checked against the sheet before anything is saved</span></div>
+        <div class="step"><b>3</b><strong>Hidden drafts</strong><span>Photos matched by ASIN; drafts with placeholder text can't publish</span></div>
+        <div class="step"><b>4</b><strong>Publish all</strong><span>The whole drop goes live together, grouped into clean cards</span></div>
+        <div class="step live"><b>5</b><strong>Everywhere</strong><span>On the website, and in Google Shopping within 24 hours</span></div>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feat wide">
+        <span class="kicker">On-site search</span>
+        <h3>Search that still works when customers misspell things</h3>
+        <p style="color:var(--muted);font-size:.95rem">Product titles from suppliers are long; customer searches are short. A popular fuzzy-search library ranked badly on this data, so I tested it against the real catalogue and replaced it with word-by-word matching. Try the comparison:</p>
+        <div class="search-demo">
+          <div class="sd-input" aria-label="Example search query"><span>mowse</span><span class="cursor" aria-hidden="true"></span></div>
+          <div class="sd-toggle" role="group" aria-label="Choose search method">
+            <button type="button" id="sd-before" aria-pressed="false">Off-the-shelf library</button>
+            <button type="button" id="sd-after" aria-pressed="true">My word-level matching</button>
+          </div>
+          <ol class="sd-results" id="sd-results"></ol>
+          <p class="sd-cap" id="sd-cap"></p>
+        </div>
+      </div>
+      <div class="feat">
+        <span class="kicker">Merchandising</span>
+        <h3>A big, messy catalogue made easy to shop</h3>
+        <ul>
+          <li>Savings badges against MSRP</li>
+          <li>"New" badges that expire on their own</li>
+          <li>Ten identical pallets show as one card: "10 available"</li>
+          <li>Minimum order rules so stock doesn't get stuck as odd leftovers</li>
+        </ul>
+      </div>
+      <div class="feat">
+        <span class="kicker">Orders &amp; stores</span>
+        <h3>Orders, inventory and pickup</h3>
+        <ul>
+          <li>Shopify orders arrive in the admin automatically</li>
+          <li>Inventory report exports to Excel</li>
+          <li>Hours and phones for 10 locations match Google Business Profiles</li>
+          <li>New-stock email alerts for customers</li>
+        </ul>
+      </div>
+      <div class="feat">
+        <span class="kicker">Reach</span>
+        <h3>Google Shopping, SEO, three languages</h3>
+        <ul>
+          <li>Daily Merchant Center feed, built because Shopify's Google channel pointed to the wrong storefront</li>
+          <li>Price and stock data shown in Google results</li>
+          <li>French and Arabic versions, right-to-left layout included</li>
+        </ul>
+      </div>
+      <div class="feat">
+        <span class="kicker">Testing</span>
+        <h3>Checked before customers see it</h3>
+        <ul>
+          <li>Automated browser test from listing to Shopify checkout</li>
+          <li>Checks on manifest parsing, quantity rules, search and translations</li>
+          <li>Security pass on forms and cart, with spam filtering</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE 2: EBAY -->
+<section class="band ebay">
+  <div class="band-inner">
+    <div class="ebay-grid">
+      <div>
+        <span class="pallet-no"><span>PALLET 02</span> eBay store</span>
+        <h2>KrazyDeals Liquidation</h2>
+        <p>My Canadian Stock's eBay channel, reaching buyers across Canada who don't shop the website. I run the account end to end, from listing to feedback.</p>
+        <div class="scorecard">
+          <svg class="ring" viewBox="0 0 120 120" role="img" aria-label="98.9% positive feedback">
+            <circle class="track" cx="60" cy="60" r="52"/>
+            <circle class="val" cx="60" cy="60" r="52" stroke-dasharray="323.1 326.7"/>
+            <text x="60" y="64" text-anchor="middle" font-size="27">98.9%</text>
+            <text class="sub" x="60" y="82" text-anchor="middle" font-size="8.5">POSITIVE</text>
+          </svg>
+          <div class="score-list">
+            <div><b>373</b><span>feedback ratings</span></div>
+            <div><b>559</b><span>items sold</span></div>
+            <div><b>169</b><span>followers</span></div>
+          </div>
+        </div>
+        <a class="visit" href="https://www.ebay.ca/usr/krazydeals-liquidation" target="_blank" rel="noopener">View the eBay store ↗</a>
+      </div>
+      <div class="ebay-cols">
+        <article><span class="kicker" style="color:var(--green)">Listings</span><h3>Listings buyers can trust</h3><p>Keyword-led titles and complete item specifics so items surface in eBay search and filters. Returned goods vary, so every listing states the condition plainly, with photos of what the buyer actually gets.</p></article>
+        <article><span class="kicker" style="color:var(--green)">Pricing</span><h3>Pricing and promotions</h3><p>Prices set against retail value and what similar items sell for. Best Offer, markdown sales and promoted listings keep slow stock moving.</p></article>
+        <article><span class="kicker" style="color:var(--green)">Fulfilment</span><h3>Orders, returns and feedback</h3><p>I pack and ship, upload tracking, answer buyer questions, and handle return requests and cases. 373 ratings at 98.9% positive is the result.</p></article>
+        <article><span class="kicker" style="color:var(--green)">Two channels, one catalogue</span><h3>Kept in sync with the website</h3><p>Both stores use the same supplier manifest data, so an item is described and priced consistently wherever a customer finds it. Running several storefronts at once is something I already do every day.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKING + TOOLS -->
+<section class="band">
+  <div class="band-inner">
+    <div class="sec-head">
+      <span class="kicker">How I work</span>
+      <h2>Clear with people, careful with data</h2>
+    </div>
+    <div class="two">
+      <div class="quote"><span class="kicker">With the owner</span><h3>Nothing goes live without sign-off</h3><p>Design direction, store hours, translation choices and the redesign were each approved by the owner first. I keep a written design guide so later changes match what was approved.</p></div>
+      <div class="quote"><span class="kicker">With other teams</span><h3>Handovers anyone can follow</h3><p>When another developer needed to connect the owner's manifest software, I wrote the steps plainly: what to send, where, how to keep the key safe, and what the user sees on success or error.</p></div>
+    </div>
+    <div class="tool-group">
+      <span class="kicker" style="color:var(--muted)">Platforms &amp; tools</span>
+      <div class="stickers">
+        <span class="sticker">Shopify admin</span><span class="sticker">Shopify checkout &amp; orders</span><span class="sticker">eBay Seller Hub</span><span class="sticker">eBay promoted listings</span><span class="sticker">Google Merchant Center</span><span class="sticker">Google Business Profile</span><span class="sticker">Excel manifests</span><span class="sticker">ASIN · UPC · SKU data</span><span class="sticker">Inventory reports</span><span class="sticker">SEO &amp; structured data</span><span class="sticker">Site analytics</span><span class="sticker">FR / AR localization</span><span class="sticker">Automated checkout tests</span><span class="sticker">Next.js &amp; TypeScript</span><span class="sticker">Git &amp; GitHub</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISPATCH -->
+<footer class="dispatch">
+  <div class="band-inner">
+    <div class="dispatch-grid">
+      <div>
+        <span class="kicker" style="color:#111418">Ready for dispatch</span>
+        <h2>Let's talk</h2>
+        <p>Sales and traffic figures for the website belong to the owner and aren't published here. I'm glad to walk through the website, the eBay account and my weekly manifest workflow in an interview.</p>
+      </div>
+      <div>
+        <div class="contact">
+          <button class="chip copy" type="button" data-copy="514-207-7591"><span><b>TEL</b>&nbsp; 514-207-7591</span><span class="fine">copy</span></button>
+          <button class="chip copy" type="button" data-copy="Kfiras.pro@gmail.com"><span><b>EMAIL</b>&nbsp; Kfiras.pro@gmail.com</span><span class="fine">copy</span></button>
+          <a class="chip" href="https://www.linkedin.com/in/firas-kouki-6a4118257/" target="_blank" rel="noopener"><span><b>IN</b>&nbsp; linkedin.com/in/firas-kouki</span><span class="fine">open ↗</span></a>
+        </div>
+        <span class="toast mono" aria-live="polite"></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Copy buttons
+  document.querySelectorAll(".copy").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var text = btn.getAttribute("data-copy");
+      var toast = btn.closest(".contact").parentElement.querySelector(".toast");
+      function done(msg) { if (toast) { toast.textContent = msg; setTimeout(function () { toast.textContent = ""; }, 2200); } }
+      try {
+        navigator.clipboard.writeText(text).then(function () { done("Copied " + text); }, function () { done(text); });
+      } catch (e) { done(text); }
+    });
+  });
+
+  // Search comparison (illustrative results)
+  var sets = {
+    before: {
+      items: [["Lawn Mower Replacement Blade 21in", "bad", "WRONG"], ["Mower Deck Belt Kit", "bad", "WRONG"], ["Wireless Optical Mouse 2.4GHz", "good", "MOUSE"], ["Gaming Mouse RGB 7200 DPI", "good", "MOUSE"]],
+      cap: "Whole-title fuzzy matching: lawn-mower parts outrank actual mice."
+    },
+    after: {
+      items: [["Wireless Optical Mouse 2.4GHz", "good", "MOUSE"], ["Gaming Mouse RGB 7200 DPI", "good", "MOUSE"], ["Ergonomic Vertical Mouse", "good", "MOUSE"], ["Mouse Pad XL Extended", "good", "CLOSE"]],
+      cap: "Word-by-word matching: \"mowse\" lands on mice first. Example titles, same ranking behaviour I verified on the real catalogue."
+    }
+  };
+  var list = document.getElementById("sd-results"), cap = document.getElementById("sd-cap");
+  var bBefore = document.getElementById("sd-before"), bAfter = document.getElementById("sd-after");
+  function show(key) {
+    list.innerHTML = "";
+    sets[key].items.forEach(function (r) {
+      var li = document.createElement("li"); li.className = r[1];
+      var t = document.createElement("span"); t.textContent = r[0];
+      var s = document.createElement("small"); s.textContent = r[2];
+      li.appendChild(t); li.appendChild(s); list.appendChild(li);
+    });
+    cap.textContent = sets[key].cap;
+    bBefore.setAttribute("aria-pressed", key === "before"); bAfter.setAttribute("aria-pressed", key === "after");
+  }
+  bBefore.addEventListener("click", function () { show("before"); });
+  bAfter.addEventListener("click", function () { show("after"); });
+  show("after");
+})();
+</script>
+</body>
+</html>
